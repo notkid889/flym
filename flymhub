@@ -1,0 +1,18 @@
+-- Define the Hub
+local GameLaunchers = {
+    -- Build a zoo
+    [105555311806207] = function()
+
+    end,
+    -- My Frog Pond
+    [123852068581512] = function()
+        loadstring(game:HttpGet(("https://raw.githubusercontent.com/notkid889/flym/refs/heads/main/myfrogpond.lua"), true))() 
+    end,
+}
+local currentPlaceId = game.PlaceId
+
+if GameLaunchers[currentPlaceId] then
+    GameLaunchers[currentPlaceId]()
+else
+    warn("Game not supported by this Hub. PlaceId: " .. currentPlaceId)
+end
